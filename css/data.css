@@ -1,0 +1,69 @@
+#data {
+    min-height: 100vh;
+    width: 100vw;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#data > #container {
+    background: rgba(255,255,255,0.7);
+    padding: 10px;
+    width: 75%;
+}
+
+#data > #container > div {
+    height: 480px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+#data > #container > div >div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bar {
+    min-width: 75px;
+    height: 0px;
+}
+
+#bar1 {
+    background: blue;
+}
+
+#bar2 {
+    background: red;
+}
+
+
+#bar3 {
+    background: blue;
+}
+
+#bar4 {
+    background: red;
+}
+
+@keyframes bar1-anim {
+    from {height: 0px;}
+    to {height: 189px}
+}
+
+@keyframes bar2-anim {
+    from {height: 0px;}
+    to {height: 147px}
+}
+
+@keyframes bar3-anim {
+    from {height: 0px;}
+    to {height: 400px}
+}
+
+@keyframes bar4-anim {
+    from {height: 0px;}
+    to {height: 309px}
+}
