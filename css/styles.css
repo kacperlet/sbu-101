@@ -99,6 +99,11 @@ nav > a {
     background: rgb(250, 249, 249);
 }
 
+.bluePanel {
+    background: rgb(124, 192, 231);
+    color: white;
+}
+
 .row {
     display: flex;
     align-items: center;
@@ -116,17 +121,20 @@ nav > a {
     text-align: center;
 }
 
-#background {
-    width: 100%;
+.centered {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 40px;
-    padding-bottom: 40px;
 }
 
-#background > div {
+.spaced {
     width: 75%;
+}
+
+#background {
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .quote-start {
@@ -135,9 +143,7 @@ nav > a {
 }
 
 .image-text-combo {
-    width: 75%;
     display: flex;
-
 }
 
 .image-text-combo img {
@@ -145,19 +151,17 @@ nav > a {
     object-fit: contain;
 }
 
-.bluePanel {
-    background: rgb(124, 192, 231);
-    color: white;
-}
-
-.center {
+.image-container {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
 }
 
-.center > img {
+.image-container > img {
     max-width: 50%;
     max-height: 50%;
+}
+
+#involved {
+    min-height: 100vh;
 }
