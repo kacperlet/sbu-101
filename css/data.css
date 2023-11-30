@@ -32,20 +32,20 @@
 }
 
 #bar1 {
-    background: blue;
+    background: rgb(124, 192, 231);
 }
 
 #bar2 {
-    background: red;
+    background: rgb(245,65,89);
 }
 
 
 #bar3 {
-    background: blue;
+    background: rgb(124, 192, 231);
 }
 
 #bar4 {
-    background: red;
+    background: rgb(245,65,89);
 }
 
 @keyframes bar1-anim {
