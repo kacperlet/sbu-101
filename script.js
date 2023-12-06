@@ -20,6 +20,14 @@ for (let e of document.querySelectorAll(".fadein")) {
     }, options).observe(e)
 }
 
+for (let e of document.querySelectorAll(".fromright")) {
+    new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting){
+            e.style.animation = "fromright 1.7s ease 0s 1 normal both"
+        }
+    }, options).observe(e)
+}
+
 const bar1 = document.getElementById("bar1");
 const bar2 = document.getElementById("bar2");
 const bar3 = document.getElementById("bar3");
@@ -34,22 +42,34 @@ new IntersectionObserver(entries => {
     }
 }, options).observe(document.getElementById("data"))
 
-/*
-<div id="b2">
-                        <div>
-                            <p>Over the past, there has been significant shifts in the gender wage gap. Historical data reveals a gradual reduction in the wage gap influenced by societal changes, legal reforms, and increased awareness. However, it remains a complex issue. Recognizing this complexity, society and individuals must draw attention to addressing the gender wage gap. A well-rounded approach is necessary, involving advocacy for equal pay legislation, challenging gender biases, and cultivating a workplace culture that values diversity and equity. It is a shared responsibility that everyone should contribute to, requiring active efforts to uplift society and work towards gender equality. 
-                            </p>
-                        </div>
-                        <div>
-                            <div class="quote-start">“</div>
-                            <p>Across all workers in the United States in
-                                2022, including those working part-time
-                                or part of the year, women were
-                                typically paid just 78 cents for every
-                                dollar paid to a man - adding up to a
-                                difference of $11,450 over the course
-                                of the year.
-                                1</p>
-                        </div>
-                    </div>
-                    */
+
+function changeSection(index) {
+    for (let i = 1; i < 5; i++) {
+        let e = document.querySelector(`nav > a:nth-child(${i})`)
+        console.log(e)
+        if (i == index) {
+            e.className = "selected";
+            console.log(e)
+        }
+        else {
+            e.className = "";
+        }
+    }
+}
+
+const sections = ['overview', 'background', 'involved', 'implementations']
+
+const options2 = {
+    root: null,
+    threshold: 0,
+    rootMargin: "0px",
+  }
+
+for (let i = 0; i < sections.length; i++) {
+    console.log(document.getElementById(sections[i]))
+    new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting){
+            changeSection(i+1)
+        }
+    }, options2).observe(document.getElementById(sections[i]))
+}
